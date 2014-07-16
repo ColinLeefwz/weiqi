@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :models
   get 'user/new'
 
   get 'user/index'
+
+  get 'user/show'
 
   #get 'welcome/index'
   root 'welcome#index'
