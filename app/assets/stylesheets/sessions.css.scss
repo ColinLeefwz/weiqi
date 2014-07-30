@@ -1,3 +1,53 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+  //@include background-image(linear-gradient(left top, white, #dddddd));
+
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 10px;
+  }
+
+  .form-signin .checkbox {
+    font-weight: normal;
+  }
+
+  @mixin box-sizing( $type: border-box ) {
+    -webkit-box-sizing: $type;
+    -moz-box-sizing: $type;
+    -o-box-sizing: $type;
+    -ms-box-sizing: $type;
+    box-sizing: $type;
+  }
+
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    @include box-sizing();
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
