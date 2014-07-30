@@ -2,9 +2,9 @@
   = form_tag sessions_path, role: 'form', class: 'form-signin' do
     %h2
       .form-signin-heading
-        Log in
-    = text_field_tag :email, params[:email], placeholder: 'Email address', class: 'form-control', required: '', autofocus: ''
-    = password_field_tag :password, params[:password], placeholder: 'Password', class: 'form-control', required: ''
+        请您输入您的邮箱和密码
+    = text_field_tag :email, params[:email], placeholder: '输入您的邮箱', class: 'form-control', required: '', autofocus: ''
+    = password_field_tag :password, params[:password], placeholder: '输入您的密码', class: 'form-control', required: ''
     = check_box_tag :remember_me
     记住我
-    = submit_tag "Log in", class: 'btn btn-lg btn-primary btn-block'
+    = submit_tag "登录", class: 'btn btn-lg btn-primary btn-block'
