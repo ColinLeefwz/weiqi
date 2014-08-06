@@ -27,12 +27,17 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'angularjs-rails'
 gem 'devise'
 gem 'bcrypt-ruby',  :require => 'bcrypt'
+#gem 'factory_girl'
+gem 'factory_girl_rails'
+
+gem 'database_cleaner'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring', group: :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'spork'
 end
 
 # Use ActiveModel has_secure_password
