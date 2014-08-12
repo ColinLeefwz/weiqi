@@ -1,2 +1,4 @@
 %h1 User#index
 %p Find me in app/views/user/index.html.haml
+= @users.each do |u|
+  = render partial: 'user', locals: {u: u}

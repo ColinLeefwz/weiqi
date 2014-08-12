@@ -21,17 +21,25 @@ RSpec.describe UsersController, :type => :controller do
         post 'create', user: FactoryGirl.attributes_for(:user)
         expect(response).to redirect_to(root_path)
       end
+      it "shows the notice" do
+        post 'create', user: FactoryGirl.attributes_for(:user)
+        expect(flash[:notice]).to eq("您已经成功注册!")
+      end
     end
 
-    context 'when user is invalid' do
+    context 'when user is invalid  with nil email' do
       it "cannot create a new user" do
         #post 'create', user: {id: 1, email: "", user_name: "lilonglong", password: "123123123"}
         post 'create', user: FactoryGirl.attributes_for(:user, email: "")
         expect(assigns(:user)).to_not eq(User.find_by(id:1))
       end
-      it "redirects to the home page" do
+      it "redirects to the sign up page" do
         post 'create', user: FactoryGirl.attributes_for(:user, email: "")
-        expect(response).to_not redirect_to(root_path)
+        expect(response).to render_template(:new)
+      end
+      it "shows the notice" do
+        post 'create', user: FactoryGirl.attributes_for(:user, email: "")
+        expect(flash[:notice]).to eq("您的信息填写有误，请重新填写！")
       end
     end
   end

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  #attr_accessible :email, :password, :password_confirmation
+  has_many :profiles
+
   attr_accessor :password
-  #validates :user_name, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
   validates :email, :presence => true, :uniqueness => true, :format => {:with  => Devise.email_regexp, :allow_blank => true, :if => :email_changed?}
   validates :password, :confirmation => true, :length => { :minimum => 6, :maximum => 15 } #password_confirmation attr
 

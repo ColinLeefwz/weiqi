@@ -7,16 +7,16 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_url, :notice => "Logged in!"
+      redirect_to root_url, notice: "您已经成功登录!"
     else
-      flash.now.alert = "Invalid email or password"
+      flash[:notice] = "帐号名或者密码错误"
       render "new"
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
+    redirect_to root_url, notice: "您已经成功退出帐号!"
   end
 
 end
