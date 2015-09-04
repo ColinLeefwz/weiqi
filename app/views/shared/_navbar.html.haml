@@ -12,7 +12,7 @@
         .navbar-form.navbar-right
           %a.navbar-brand{href: "#"} #{current_user.email}
           = button_to "Log out", log_out_path, class: 'button btn btn-success'
-      - else
+      - elsif request.path != "/log_in"
         = form_tag sessions_path, role: 'form', class: ' navbar-form navbar-right' do
           .form-group
             = text_field_tag :email, params[:email], placeholder: '输入您的邮箱', class: 'form-control'
