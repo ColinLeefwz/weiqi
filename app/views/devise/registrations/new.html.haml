@@ -1,0 +1,12 @@
+.container
+  .form-signup
+    = form_for @user do |f|
+      %h2
+        .form-signup-heading
+          请您填写您的相关信息
+      = f.text_field :email, placeholder: '用于注册的邮箱', class: 'form-control', required: '', autofocus: ''
+      = f.password_field :password, placeholder: '输入您想要设置的密码', class: 'form-control', required: ''
+      = f.password_field :password_confirmation, placeholder: '确认您的密码', class: 'form-control', required: ''
+      = f.submit '注册', class: 'btn btn-lg btn-primary btn-block'
+
+= render "devise/shared/links"
