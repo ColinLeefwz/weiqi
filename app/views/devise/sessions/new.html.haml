@@ -1,5 +1,5 @@
 .container
-  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin"}) do |f|
+  = form_for(resource, as: resource_name, url: user_session_path, html: { class: "form-signin"}) do |f|
     %h2
       .form-signin-heading
         请您输入您的邮箱和密码

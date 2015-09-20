@@ -1,9 +1,17 @@
 class User < ActiveRecord::Base
+  rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  #attr_accessible :email, :password, :password_confirmation
+
+
+  #attr_accessible :email, :password, :password_confirmation, :remember_me, :roles
+
+  #roles_attribute :roles_mask
+
+  #roles :admin, :editor, :guest
+
   attr_accessor :password
   #validates :user_name, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
   validates :email, :presence => true, :uniqueness => true, :format => {:with  => Devise.email_regexp, :allow_blank => true, :if => :email_changed?}
