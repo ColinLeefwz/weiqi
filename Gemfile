@@ -26,11 +26,15 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'angularjs-rails'
 gem 'devise'
+gem 'cancan'
+gem 'rolify'
 gem 'bcrypt-ruby',  :require => 'bcrypt'
 #gem 'factory_girl'
 gem 'factory_girl_rails'
 
 gem 'database_cleaner'
+
+gem 'rails_admin'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring', group: :development
